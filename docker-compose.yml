@@ -1,0 +1,16 @@
+Services:
+   jenkins:
+        image: jenkins/jenkins:latest
+             ports:
+                    - 8080:8080
+                           - 50000:50000
+                                networks:
+                                       - "jenkins-nexus-networks"
+                                          nexus:
+                                               image: sonatype/nexus3
+                                                    ports:
+                                                           - 8081:8081
+                                                                networks:
+                                                                       - "jenkins-nexus-networks"
+                                                                networks:
+                                                                   jenkins-nexus-networks:
